@@ -1,9 +1,7 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:lts-alpine'
-            args '-p 3000:3000 -p 5000:5000'
-        }
+    agent any
+    tools {
+        nodejs "22.0.0"
     }
     environment {
         CI = 'true'
