@@ -29,13 +29,13 @@ pipeline {
             }
         }
         
-        stage('SonarQube') {
-            steps {
-                withSonarQubeEnv('sonar') {
-                    sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Vercelcron -Dsonar.projectName=Vercelcron"
-                }
-            }
-        }
+        // stage('SonarQube') {
+        //     steps {
+        //         withSonarQubeEnv('sonar') {
+        //             sh "$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=Vercelcron -Dsonar.projectName=Vercelcron"
+        //         }
+        //     }
+        // }
         
         stage('Determine Docker Tag') {
             steps {
