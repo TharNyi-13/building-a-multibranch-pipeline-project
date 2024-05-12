@@ -24,7 +24,7 @@ ENV NODE_ENV=$NODE_ENV
 WORKDIR /app
 COPY --from=deps --link /app/node_modules ./node_modules
 COPY --link  . .
-RUN envsubst < .env.${NODE_ENV} > .env.production
+RUN envsubst < .env.${NODE_ENV} > .env
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
